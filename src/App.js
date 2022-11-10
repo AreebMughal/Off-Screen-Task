@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Multiplier from './components/Multiplier';
+import { createContext, useState } from 'react';
+import Counter from './components/Counter';
+import Subtraction from './components/Subtraction';
+import Divider from './components/Divider';
+
+export const CounterContex = createContext();
 
 function App() {
+  const [counter, setCounter] = useState(5);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CounterContex.Provider value={{ counter, setCounter }}>
+      <div>
+        <Counter />
+        <br />
+        <div className='d-flex flex-wrap'>
+          <Subtraction />
+          <Multiplier />
+          <Divider />
+        </div>
+      </div>
+    </CounterContex.Provider>
   );
 }
 

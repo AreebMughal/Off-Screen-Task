@@ -1,0 +1,17 @@
+.card {
+    height: 100px;
+    width: 20%;
+    color:white;
+    background-color: rgb(0, 136, 160);
+    border-radius: 5px;
+}
+
+.result {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.res-value {
+    float: right;
+}
